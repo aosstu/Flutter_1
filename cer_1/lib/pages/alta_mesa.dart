@@ -1,4 +1,6 @@
 import 'package:cer_1/login.dart';
+import 'package:cer_1/pages/contratos.dart';
+import 'package:cer_1/pages/perfil.dart';
 import 'package:flutter/material.dart';
 
 List<dynamic> asesinos = [
@@ -292,7 +294,7 @@ List<dynamic> asesinos = [
 ];
 
 class AltaMesa extends StatefulWidget {
-  final Asesino asesinoSeleccionado;
+  final String asesinoSeleccionado;
   const AltaMesa({Key? key, required this.asesinoSeleccionado})
       : super(key: key);
   @override
@@ -300,18 +302,109 @@ class AltaMesa extends StatefulWidget {
 }
 
 class _AltaMesaState extends State<AltaMesa> {
+  int _buscaAsesino(String nombre) {
+    switch (nombre) {
+      case 'The Shinobi':
+        return 0;
+      case 'Chidi':
+        return 1;
+      case 'Zero':
+        return 2;
+      case 'The Adjudicator':
+        return 3;
+      case 'The Harbinger':
+        return 4;
+      case 'Killa Harkan':
+        return 5;
+      case 'Vincent Bisset de Gramont':
+        return 6;
+      default:
+        return 7;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-            'Has seleccionado el loco:${asesinos[widget.asesinoSeleccionado.valor]["nombre"]}'),
+        title: Text('Altamesa'),
       ),
-      body: OutlinedButton(
-        onPressed: () {
-          Navigator.pop(context);
-        },
-        child: Text('salir'),
+      body: Column(
+        children: [
+          OutlinedButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Text('salir'),
+          ),
+          Text(asesinos[_buscaAsesino(widget.asesinoSeleccionado)]['nombre']),
+          Text(asesinos[_buscaAsesino(widget.asesinoSeleccionado)]['edad']),
+          Image(
+              image: AssetImage(
+                  'assets/images/asesinos/${asesinos[_buscaAsesino(widget.asesinoSeleccionado)]['nombre']}.jpg'))
+        ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+              child: Text('Drawer Header'),
+            ),
+            ListTile(
+              title: const Text('Perfil'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Perfil(
+                            asesinoSeleccionado:
+                                _buscaAsesino(widget.asesinoSeleccionado))));
+              },
+            ),
+            ListTile(
+              title: const Text('Home'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: const Text('Contratos'),
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Contratos(
+                            asesinoSeleccionado:
+                                _buscaAsesino(widget.asesinoSeleccionado))));
+              },
+            ),
+            ListTile(
+              title: const Text('Servicios'),
+              onTap: () {
+                // Update the state of the app.
+                // ...
+              },
+            ),
+            ListTile(
+              title: const Text('Hoteles'),
+              onTap: () {
+                // Update the state of the app.
+                // ...
+              },
+            ),
+            ListTile(
+              title: const Text('Salir'),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
