@@ -1,6 +1,7 @@
 import 'package:cer_1/login.dart';
 import 'package:cer_1/pages/contratos.dart';
 import 'package:cer_1/pages/perfil.dart';
+import 'package:cer_1/widgets/widget1.dart';
 import 'package:flutter/material.dart';
 
 List<dynamic> asesinos = [
@@ -378,15 +379,18 @@ class _AltaMesaState extends State<AltaMesa> {
                     context,
                     MaterialPageRoute(
                         builder: (context) => Contratos(
-                            asesinoSeleccionado:
-                                _buscaAsesino(widget.asesinoSeleccionado))));
+                            asesinoSeleccionado: widget.asesinoSeleccionado)));
               },
             ),
             ListTile(
               title: const Text('Servicios'),
               onTap: () {
-                // Update the state of the app.
-                // ...
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => AssasinCard(
+                              asesinoSeleccionado: widget.asesinoSeleccionado,
+                            )));
               },
             ),
             ListTile(

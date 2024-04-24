@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import '../widgets/widget1.dart';
+import 'package:cer_1/pages/cosas/locos.dart';
 
 List<dynamic> asesinos = [
   {
@@ -18,7 +17,7 @@ List<dynamic> asesinos = [
         'paga': '10000000 Rp',
         'nacionalidad': 'Indonesia',
         'bandera': 'id',
-        'foto': 'abdu.jpeg'
+        'foto': 'abdu.jpg'
       },
       {
         'contrato': '2',
@@ -27,7 +26,7 @@ List<dynamic> asesinos = [
         'paga': '1000000000 Rp',
         'nacionalidad': 'United States',
         'bandera': 'us',
-        'foto': 'harrison.jpeg'
+        'foto': 'harrison.jpg'
       },
       {
         'contrato': '3',
@@ -36,7 +35,7 @@ List<dynamic> asesinos = [
         'paga': '90000000000 Rp',
         'nacionalidad': 'India',
         'bandera': 'in',
-        'foto': 'ratan.jpeg'
+        'foto': 'ratan.jpg'
       }
     ]
   },
@@ -55,7 +54,7 @@ List<dynamic> asesinos = [
         'paga': '1000000000000 CLP',
         'nacionalidad': 'Haiti',
         'bandera': 'ht',
-        'foto': 'tiano.jpeg'
+        'foto': 'tiano.jpg'
       },
       {
         'contrato': '2',
@@ -64,7 +63,7 @@ List<dynamic> asesinos = [
         'paga': '1000000000000 CLP',
         'nacionalidad': 'Chile',
         'bandera': 'cl',
-        'foto': 'vendedor.jpeg'
+        'foto': 'vendedor.jpg'
       },
       {
         'contrato': '3',
@@ -73,7 +72,7 @@ List<dynamic> asesinos = [
         'paga': '9000000000000 CLP',
         'nacionalidad': 'Chile',
         'bandera': 'cl',
-        'foto': 'papi.jpeg'
+        'foto': 'papi.jpg'
       },
       {
         'contrato': '4',
@@ -82,7 +81,7 @@ List<dynamic> asesinos = [
         'paga': '7000000000000 CLP',
         'nacionalidad': 'Chile',
         'bandera': 'cl',
-        'foto': 'guaton.jpeg'
+        'foto': 'guaton.jpg'
       }
     ]
   },
@@ -101,7 +100,7 @@ List<dynamic> asesinos = [
         'paga': '1000000 yen',
         'nacionalidad': 'Japan',
         'bandera': 'jp',
-        'foto': 'japones.jpeg'
+        'foto': 'japones.jpg'
       },
       {
         'contrato': '2',
@@ -110,7 +109,7 @@ List<dynamic> asesinos = [
         'paga': '10000000 yen',
         'nacionalidad': 'Japan',
         'bandera': 'jp',
-        'foto': 'tadashi.jpeg'
+        'foto': 'tadashi.jpg'
       }
     ]
   },
@@ -129,7 +128,7 @@ List<dynamic> asesinos = [
         'paga': '100000000000 USD',
         'nacionalidad': 'English',
         'bandera': 'en',
-        'foto': 'lennon.jpeg'
+        'foto': 'lennon.jpg'
       },
       {
         'contrato': '2',
@@ -138,7 +137,7 @@ List<dynamic> asesinos = [
         'paga': '1000000000 USD',
         'nacionalidad': 'India',
         'bandera': 'id',
-        'foto': 'gandhi.jpeg'
+        'foto': 'gandhi.jpg'
       }
     ]
   },
@@ -157,7 +156,7 @@ List<dynamic> asesinos = [
         'paga': '100000000000 USD',
         'nacionalidad': 'South Africa',
         'bandera': 'za',
-        'foto': 'musk.jpeg'
+        'foto': 'musk.jpg'
       },
       {
         'contrato': '2',
@@ -166,7 +165,7 @@ List<dynamic> asesinos = [
         'paga': '1000000000000 USD',
         'nacionalidad': 'United States',
         'bandera': 'us',
-        'foto': 'jeff.jpeg'
+        'foto': 'jeff.jpg'
       },
       {
         'contrato': '3',
@@ -175,7 +174,7 @@ List<dynamic> asesinos = [
         'paga': '1000000000000 USD',
         'nacionalidad': 'Chile',
         'bandera': 'cl',
-        'foto': 'bonva.jpeg'
+        'foto': 'bonva.jpg'
       }
     ]
   },
@@ -194,7 +193,7 @@ List<dynamic> asesinos = [
         'paga': '1000000000 €',
         'nacionalidad': 'German',
         'bandera': 'de',
-        'foto': 'vettel.jpeg'
+        'foto': 'vettel.jpg'
       },
       {
         'contrato': '2',
@@ -203,7 +202,7 @@ List<dynamic> asesinos = [
         'paga': '1000000000 €',
         'nacionalidad': 'German',
         'bandera': 'de',
-        'foto': 'dirk.jpeg'
+        'foto': 'dirk.jpg'
       },
       {
         'contrato': '3',
@@ -212,7 +211,7 @@ List<dynamic> asesinos = [
         'paga': '1000000000000 €',
         'nacionalidad': 'German',
         'bandera': 'de',
-        'foto': 'anne.jpeg'
+        'foto': 'anne.jpg'
       }
     ]
   },
@@ -231,7 +230,7 @@ List<dynamic> asesinos = [
         'paga': '10000000000 €',
         'nacionalidad': 'French',
         'bandera': 'fr',
-        'foto': 'erwin.jpeg'
+        'foto': 'erwin.jpg'
       },
       {
         'contrato': '2',
@@ -240,7 +239,7 @@ List<dynamic> asesinos = [
         'paga': '100000000000 €',
         'nacionalidad': 'French',
         'bandera': 'fr',
-        'foto': 'jpg.jpeg'
+        'foto': 'jpg.jpg'
       },
       {
         'contrato': '3',
@@ -249,7 +248,7 @@ List<dynamic> asesinos = [
         'paga': '1000000000000 €',
         'nacionalidad': 'French',
         'bandera': 'fr',
-        'foto': 'bernard.jpeg'
+        'foto': 'bernard.jpg'
       }
     ]
   },
@@ -268,7 +267,7 @@ List<dynamic> asesinos = [
         'paga': '100000000000 €',
         'nacionalidad': 'Italy',
         'bandera': 'it',
-        'foto': 'valentino.jpeg'
+        'foto': 'valentino.jpg'
       },
       {
         'contrato': '2',
@@ -277,7 +276,7 @@ List<dynamic> asesinos = [
         'paga': '100000000000 €',
         'nacionalidad': 'German',
         'bandera': 'de',
-        'foto': 'jeremy.jpeg'
+        'foto': 'jeremy.jpg'
       },
       {
         'contrato': '3',
@@ -286,14 +285,14 @@ List<dynamic> asesinos = [
         'paga': '1000000000000 USD',
         'nacionalidad': 'United States',
         'bandera': 'us',
-        'foto': 'ye.jpeg'
+        'foto': 'ye.jpg'
       }
     ]
   }
 ];
 
 class Contratos extends StatefulWidget {
-  final int asesinoSeleccionado;
+  final String asesinoSeleccionado;
   const Contratos({super.key, required this.asesinoSeleccionado});
 
   @override
@@ -301,15 +300,92 @@ class Contratos extends StatefulWidget {
 }
 
 class _ContratosState extends State<Contratos> {
+/*   int _largoContrato(int select) {
+    switch (select) {
+      case 1:
+        return asesinos[1]['contratos'].length;
+    }
+  } */
+  final List<Item> _listaDeItems = generateItemsList(8);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Contratos'),
-      ),
-      body: Column(
-        children: [Widget096()],
+        body: DetalleAsesino(
+            asesinoSeleccionado: widget.asesinoSeleccionado,
+            asesinos: asesinos));
+  }
+}
+
+class Item {
+  String headerText;
+  String expandedText;
+  bool isExpanded;
+  Item(
+      {required this.headerText,
+      required this.expandedText,
+      this.isExpanded = false});
+}
+
+List<Item> generateItemsList(int size) {
+  return List.generate(
+      size,
+      (int index) => Item(
+          headerText: '$index',
+          expandedText: 'Item $index',
+          isExpanded: false));
+}
+
+class DetalleAsesino extends StatelessWidget {
+  final String asesinoSeleccionado;
+  final List<dynamic> asesinos;
+
+  DetalleAsesino({required this.asesinoSeleccionado, required this.asesinos});
+
+  @override
+  Widget build(BuildContext context) {
+    List<Widget> listaContratos =
+        Contratoss.generarContratos(asesinoSeleccionado, asesinos);
+
+    return Scaffold(
+      appBar: AppBar(title: Text('Contratos de $asesinoSeleccionado')),
+      body: ListView.builder(
+        itemCount: listaContratos.length,
+        itemBuilder: (context, index) {
+          return listaContratos[index];
+        },
       ),
     );
   }
 }
+
+/* 
+SingleChildScrollView(
+          child: ExpansionPanelList(
+            expansionCallback: (int index, bool isExpanded) {
+              setState(() {
+                for (int i = 0; i < _listaDeItems.length; i++) {
+                  if (i != index) {
+                    _listaDeItems[i].isExpanded = false;
+                  }
+                }
+                _listaDeItems[index].isExpanded =
+                    !(_listaDeItems[index].isExpanded);
+              });
+            },
+            children: _listaDeItems.map<ExpansionPanel>((Item item) {
+              return ExpansionPanel(
+                headerBuilder: (BuildContext context, bool isExpanded) {
+                  return ListTile(
+                    title: Text(item.headerText),
+                  );
+                },
+                body: ListTile(
+                  title: Text(item.headerText),
+                  subtitle: Text(item.expandedText),
+                ),
+                isExpanded: item.isExpanded,
+              );
+            }).toList(),
+        ));
+          ), */
