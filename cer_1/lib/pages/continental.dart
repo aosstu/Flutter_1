@@ -15,11 +15,18 @@ class Hoteles extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
-        title: Text('Servicios Disponibles'),
+        title: Text(
+          'Hoteles Disponibles',
+          style: TextStyle(color: Colors.white),
+          textAlign: TextAlign.center,
+        ),
+        backgroundColor: const Color.fromARGB(255, 90, 83, 83),
       ),
       body: Column(
         children: [
+          Image.asset('assets/images/barra.png'),
           Expanded(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -30,7 +37,10 @@ class Hoteles extends StatelessWidget {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => H1()));
                     },
-                    child: Text('Continental NYC'),
+                    child: Text(
+                      'Continental NYC',
+                      style: TextStyle(color: Colors.black),
+                    ),
                   ),
                 ),
                 SizedBox(width: 10), // Espacio entre los botones
@@ -40,7 +50,8 @@ class Hoteles extends StatelessWidget {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => H2()));
                     },
-                    child: Text('Continental Osaka'),
+                    child: Text('Continental Osaka',
+                        style: TextStyle(color: Colors.black)),
                   ),
                 ),
               ],
@@ -57,7 +68,8 @@ class Hoteles extends StatelessWidget {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => H3()));
                     },
-                    child: Text('Continental Roma'),
+                    child: Text('Continental Roma',
+                        style: TextStyle(color: Colors.black)),
                   ),
                 ),
                 SizedBox(width: 10), // Espacio entre los botones
@@ -67,7 +79,8 @@ class Hoteles extends StatelessWidget {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => H4()));
                     },
-                    child: Text('Continental Casablanca'),
+                    child: Text('Continental Casablanca',
+                        style: TextStyle(color: Colors.black)),
                   ),
                 ),
               ],

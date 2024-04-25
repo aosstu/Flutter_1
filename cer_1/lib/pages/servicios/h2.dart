@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+
 class H2 extends StatelessWidget {
   const H2({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey,
       appBar: AppBar(
-        title: Text('h1'),
+        backgroundColor: const Color.fromARGB(255, 90, 83, 83),
+        title: Text('Osaka'),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
@@ -25,7 +28,7 @@ class H2 extends StatelessWidget {
               height: 300, // Ajusta el alto deseado para la imagen
               child: Center(
                 child: Image(
-                  image: AssetImage('assets/images/hoteles/h1.webp'),
+                  image: AssetImage('assets/images/hoteles/h2.webp'),
                   fit: BoxFit
                       .cover, // Opcional: ajusta el ajuste de la imagen según sea necesario
                 ),
@@ -33,10 +36,15 @@ class H2 extends StatelessWidget {
             ),
           ),
           SizedBox(height: 8), // Espacio entre la imagen y el pie de imagen
-          Text('Continental NYC',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+          Text('Continental Osaka',
+              style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white)),
           Text(
-              'El Hotel Continental de Nueva York, mi amigo, es mucho más que un simple refugio para los cansados ​​y los buscados. Es un santuario para aquellos de nosotros que navegamos por los caminos oscuros de este mundo implacable. Si alguna vez necesitas un lugar para descansar tu cabeza sin temor a ser molestado por aquellos que te persiguen, el Continental es tu destino.'),
+            'El Hotel Continental en Osaka, Japón, es una joya oculta en el corazón de la ciudad que nunca duerme. A diferencia de sus homólogos en otras partes del mundo, el Continental en Osaka se destaca por su fusión única de tradición japonesa y elegancia contemporánea. Es un santuario para aquellos que buscan una experiencia exquisita en medio del bullicio de la vida moderna.',
+            style: TextStyle(color: Colors.white),
+          ),
           CarouselSlider(
             options: CarouselOptions(
               height: 200, // Altura del carrusel
@@ -47,9 +55,9 @@ class H2 extends StatelessWidget {
                   .scale, // Estrategia de agrandamiento
             ),
             items: [
-              AssetImage('assets/images/hoteles/h1 1.webp'),
-              AssetImage('assets/images/hoteles/h1 2.webp'),
-              AssetImage('assets/images/hoteles/h1 3.webp'),
+              AssetImage('assets/images/hoteles/h2 1.webp'),
+              AssetImage('assets/images/hoteles/h2 2.webp'),
+              AssetImage('assets/images/hoteles/h2 3.webp'),
               // Agrega más imágenes según sea necesario
             ].map((image) {
               return Builder(
@@ -72,6 +80,5 @@ class H2 extends StatelessWidget {
         ],
       ),
     );
-  }
   }
 }

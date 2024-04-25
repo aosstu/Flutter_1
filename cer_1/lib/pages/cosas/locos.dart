@@ -6,7 +6,6 @@ class Contratoss {
       String asesinoSeleccionado, List<dynamic> asesinos) {
     List<Widget> listaContratos = [];
 
-    // Buscar el asesino seleccionado en la lista de asesinos
     Map<String, dynamic>? asesino = asesinos.firstWhere(
         (asesino) => asesino['nombre'] == asesinoSeleccionado,
         orElse: () => null);
@@ -14,13 +13,21 @@ class Contratoss {
     if (asesino != null) {
       List<dynamic> contratos = asesino['contratos'];
 
-      // Crear un GameCard para cada contrato y añadirlo a la lista
       for (var contrato in contratos) {
         String nombreContrato = contrato['nombre'];
         String fotoContrato = contrato['foto'];
-
-        listaContratos
-            .add(GameCard(nombre: nombreContrato, foto: fotoContrato));
+        String estadoContrato = contrato['estado'];
+        String pagaContrato = contrato['paga'];
+        String nacionalidad = contrato['nacionalidad'];
+        String bandera = contrato['bandera'];
+        listaContratos.add(ContratosCard(
+          nombre: nombreContrato,
+          foto: fotoContrato,
+          estado: estadoContrato,
+          bandera: bandera,
+          nacionalidad: nacionalidad,
+          paga: pagaContrato,
+        ));
       }
     }
 

@@ -12,7 +12,9 @@ class Vestimenta extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey,
       appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 90, 83, 83),
         title: Text('Vestimenta'),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
@@ -40,9 +42,15 @@ class Vestimenta extends StatelessWidget {
           ),
           SizedBox(height: 8), // Espacio entre la imagen y el pie de imagen
           Text('Luca Mosca',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+              style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white)),
           Text(
-              'El Sastre es un servicio del Continental que proporciona a los clientes su ropaje.'),
+            'El Sastre es un servicio del Continental que proporciona a los clientes su ropaje.',
+            style: TextStyle(color: Colors.white),
+            textAlign: TextAlign.center,
+          ),
           CarouselSlider(
             options: CarouselOptions(
               height: 200, // Altura del carrusel

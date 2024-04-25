@@ -17,11 +17,17 @@ class Servicios extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.black,
       appBar: AppBar(
-        title: Text('Servicios Disponibles'),
+        title: Text(
+          'Servicios Disponibles',
+          style: TextStyle(color: Colors.white),
+        ),
+        backgroundColor: const Color.fromARGB(255, 90, 83, 83),
       ),
       body: Column(
         children: [
+          Image.asset('assets/images/barra.png'),
           Expanded(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -37,7 +43,10 @@ class Servicios extends StatelessWidget {
                                     asesinoIndex: asesinoIndex,
                                   )));
                     },
-                    child: Text('Armamento'),
+                    child: Text(
+                      'Armamento',
+                      style: TextStyle(color: Colors.black),
+                    ),
                   ),
                 ),
                 SizedBox(width: 16), // Espacio entre los botones
@@ -52,7 +61,8 @@ class Servicios extends StatelessWidget {
                                     asesinoIndex: asesinoIndex,
                                   )));
                     },
-                    child: Text('Armadura'),
+                    child:
+                        Text('Armadura', style: TextStyle(color: Colors.black)),
                   ),
                 ),
               ],
@@ -74,7 +84,8 @@ class Servicios extends StatelessWidget {
                                     asesinoIndex: asesinoIndex,
                                   )));
                     },
-                    child: Text('Cartografía'),
+                    child: Text('Cartografía',
+                        style: TextStyle(color: Colors.black)),
                   ),
                 ),
                 SizedBox(width: 16), // Espacio entre los botones
@@ -89,7 +100,8 @@ class Servicios extends StatelessWidget {
                                     asesinoIndex: asesinoIndex,
                                   )));
                     },
-                    child: Text('Medicina'),
+                    child:
+                        Text('Medicina', style: TextStyle(color: Colors.black)),
                   ),
                 ),
               ],
@@ -111,7 +123,8 @@ class Servicios extends StatelessWidget {
                                     asesinoIndex: asesinoIndex,
                                   )));
                     },
-                    child: Text('Vestimenta'),
+                    child: Text('Vestimenta',
+                        style: TextStyle(color: Colors.black)),
                   ),
                 ),
                 SizedBox(width: 16), // Espacio entre los botones
@@ -126,7 +139,8 @@ class Servicios extends StatelessWidget {
                                     asesinoIndex: asesinoIndex,
                                   )));
                     },
-                    child: Text('Comida'),
+                    child:
+                        Text('Comida', style: TextStyle(color: Colors.black)),
                   ),
                 ),
               ],

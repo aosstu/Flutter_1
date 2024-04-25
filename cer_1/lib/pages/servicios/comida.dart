@@ -13,7 +13,9 @@ class Comida extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey,
       appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 90, 83, 83),
         title: Text('Comida'),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
@@ -41,9 +43,15 @@ class Comida extends StatelessWidget {
           ),
           SizedBox(height: 8), // Espacio entre la imagen y el pie de imagen
           Text('Cocinero Personal',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+              style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white)),
           Text(
-              'El Chef ShengLong prepara sus deliciosos HandRolls a todo aquel que lo desee con mucho cariño el compare.\nMenús abajo:'),
+            'El Chef ShengLong prepara sus deliciosos HandRolls a todo aquel que lo desee con mucho cariño el compare.\nMenús abajo:',
+            style: TextStyle(color: Colors.white),
+            textAlign: TextAlign.center,
+          ),
           CarouselSlider(
             options: CarouselOptions(
               height: 200, // Altura del carrusel

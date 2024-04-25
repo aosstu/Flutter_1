@@ -1,4 +1,5 @@
 import 'package:cer_1/login.dart';
+import 'package:cer_1/pages/alta_mesa.dart';
 import 'package:cer_1/pages/continental.dart';
 import 'package:cer_1/pages/contratos.dart';
 import 'package:cer_1/pages/perfil.dart';
@@ -60,6 +61,7 @@ class MiDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: Colors.blueGrey,
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
@@ -90,7 +92,10 @@ class MiDrawer extends StatelessWidget {
             ),
           ),
           ListTile(
-            title: const Text('Perfil'),
+            title: const Text(
+              'Perfil',
+              style: TextStyle(color: Colors.white),
+            ),
             onTap: () {
               Navigator.push(
                 context,
@@ -102,13 +107,26 @@ class MiDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: const Text('Home'),
+            title: const Text(
+              'Home',
+              style: TextStyle(color: Colors.white),
+            ),
             onTap: () {
-              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AltaMesa(
+                    asesinoSeleccionado: asesinoSeleccionado,
+                  ),
+                ),
+              );
             },
           ),
           ListTile(
-            title: const Text('Contratos'),
+            title: const Text(
+              'Contratos',
+              style: TextStyle(color: Colors.white),
+            ),
             onTap: () {
               Navigator.push(
                 context,
@@ -120,7 +138,10 @@ class MiDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: const Text('Servicios'),
+            title: const Text(
+              'Servicios',
+              style: TextStyle(color: Colors.white),
+            ),
             onTap: () {
               Navigator.push(
                 context,
@@ -134,7 +155,10 @@ class MiDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: const Text('Hoteles'),
+            title: const Text(
+              'Hoteles',
+              style: TextStyle(color: Colors.white),
+            ),
             onTap: () {
               Navigator.push(
                 context,
@@ -148,7 +172,10 @@ class MiDrawer extends StatelessWidget {
             },
           ),
           ListTile(
-            title: const Text('Salir'),
+            title: const Text(
+              'Salir',
+              style: TextStyle(color: Colors.white),
+            ),
             onTap: () {
               Navigator.pop(context);
               Navigator.pop(context);

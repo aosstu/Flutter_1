@@ -1,6 +1,6 @@
 import 'package:cer_1/widgets/mi_drawer.dart';
-import 'package:cer_1/widgets/widget1.dart';
 import 'package:flutter/material.dart';
+import 'package:country_flags/country_flags.dart';
 
 List<dynamic> asesinos = [
   {
@@ -319,23 +319,61 @@ class Perfil extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: const Color.fromARGB(255, 45, 43, 43),
         appBar: AppBar(
-          title: Text('Perfil'),
+          title: Text(
+            'Perfil',
+            style: TextStyle(color: Colors.white),
+          ),
+          backgroundColor: const Color.fromARGB(255, 90, 83, 83),
         ),
-        body: Column(
-          children: [
-            OutlinedButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: Text('salir'),
-            ),
-            Text(asesinos[asesinoSeleccionado]['nombre']),
-            Text(asesinos[asesinoSeleccionado]['edad']),
-            Image(
-                image: AssetImage(
-                    'assets/images/asesinos/${asesinos[asesinoSeleccionado]['nombre']}.jpg'))
-          ],
+        body: Center(
+          child: Column(
+            children: [
+              Image.asset('assets/images/barra.png'),
+              CircleAvatar(
+                radius: 50,
+                backgroundColor: Colors.white,
+                child: Image.asset(
+                  'assets/images/asesinos/${asesinos[asesinoSeleccionado]['nombre']}.jpg',
+                  width: 400,
+                  height: 400,
+                ),
+              ),
+              Text(
+                'Nombre de pila: ${asesinos[asesinoSeleccionado]['nombre']}',
+                style: TextStyle(fontSize: 30, color: Colors.white),
+                textAlign: TextAlign.center,
+              ),
+              Text(
+                'Edad: ${asesinos[asesinoSeleccionado]['edad']}',
+                style: TextStyle(fontSize: 28, color: Colors.white),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'País: ${asesinos[asesinoSeleccionado]['nacionalidad']}',
+                    style: TextStyle(fontSize: 30, color: Colors.white),
+                  ),
+                  CountryFlag.fromCountryCode(
+                    asesinos[asesinoSeleccionado]['bandera'],
+                    height: 48,
+                    width: 62,
+                    borderRadius: 8,
+                  ),
+                ],
+              ),
+              Text(
+                'Ciudad de Residencia: ${asesinos[asesinoSeleccionado]['reside']}',
+                style: TextStyle(fontSize: 28, color: Colors.white),
+              ),
+              Text(
+                'Asesinatos: ${asesinos[asesinoSeleccionado]['killings']}',
+                style: TextStyle(fontSize: 28, color: Colors.white),
+              ),
+            ],
+          ),
         ),
         drawer: MiDrawer(
             asesinoSeleccionado: _buscaAsessino(asesinoSeleccionado),

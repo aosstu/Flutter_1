@@ -7,8 +7,10 @@ class H1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey,
       appBar: AppBar(
-        title: Text('h1'),
+        backgroundColor: const Color.fromARGB(255, 90, 83, 83),
+        title: Text('NYC'),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
@@ -35,9 +37,14 @@ class H1 extends StatelessWidget {
           ),
           SizedBox(height: 8), // Espacio entre la imagen y el pie de imagen
           Text('Continental NYC',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+              style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white)),
           Text(
-              'El Hotel Continental de Nueva York, mi amigo, es mucho más que un simple refugio para los cansados ​​y los buscados. Es un santuario para aquellos de nosotros que navegamos por los caminos oscuros de este mundo implacable. Si alguna vez necesitas un lugar para descansar tu cabeza sin temor a ser molestado por aquellos que te persiguen, el Continental es tu destino.'),
+            'El Hotel Continental de Nueva York, mi amigo, es mucho más que un simple refugio para los cansados ​​y los buscados. Es un santuario para aquellos de nosotros que navegamos por los caminos oscuros de este mundo implacable. Si alguna vez necesitas un lugar para descansar tu cabeza sin temor a ser molestado por aquellos que te persiguen, el Continental es tu destino.',
+            style: TextStyle(color: Colors.white),
+          ),
           CarouselSlider(
             options: CarouselOptions(
               height: 200, // Altura del carrusel

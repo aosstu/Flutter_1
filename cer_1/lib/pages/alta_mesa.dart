@@ -328,22 +328,21 @@ class _AltaMesaState extends State<AltaMesa> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.grey,
         appBar: AppBar(
-          title: Text('Altamesa'),
+          backgroundColor: const Color.fromARGB(255, 90, 83, 83),
+          title: Text(
+            'Altamesa',
+            textAlign: TextAlign.center,
+          ),
         ),
         body: Column(
           children: [
-            OutlinedButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: Text('salir'),
-            ),
-            Text(asesinos[_buscaAsesino(widget.asesinoSeleccionado)]['nombre']),
-            Text(asesinos[_buscaAsesino(widget.asesinoSeleccionado)]['edad']),
-            Image(
-                image: AssetImage(
-                    'assets/images/asesinos/${asesinos[_buscaAsesino(widget.asesinoSeleccionado)]['nombre']}.jpg'))
+            Image.asset('assets/images/barra.png'),
+            Text(
+              '"The High Table quiere tu vida. ¿Cómo puedes luchar contra el viento? ¿Cómo puedes destrozar las montañas? ¿Cómo puedes enterrar el océano? ¿Cómo puedes escapar de la luz? Por supuesto, puedes ir hacia la oscuridad. Pero también están en la oscuridad."',
+              style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+            )
           ],
         ),
         drawer: MiDrawer(

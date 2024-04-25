@@ -12,7 +12,9 @@ class Armamento extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey,
       appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 90, 83, 83),
         title: Text('Armamento'),
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
@@ -40,9 +42,15 @@ class Armamento extends StatelessWidget {
           ),
           SizedBox(height: 8), // Espacio entre la imagen y el pie de imagen
           Text('Peter Serafinowitcz',
-              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+              style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white)),
           Text(
-              'El Sommelier es un servicio proporcionado en The Continental; él suministra y sugiere armas de fuego y municiones.'),
+            'El Sommelier es un servicio proporcionado en The Continental; él suministra y sugiere armas de fuego y municiones.',
+            style: TextStyle(color: Colors.white),
+            textAlign: TextAlign.center,
+          ),
           CarouselSlider(
             options: CarouselOptions(
               height: 200, // Altura del carrusel

@@ -304,29 +304,11 @@ class _ContratosState extends State<Contratos> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.grey,
         body: DetalleAsesino(
             asesinoSeleccionado: widget.asesinoSeleccionado,
             asesinos: asesinos));
   }
-}
-
-class Item {
-  String headerText;
-  String expandedText;
-  bool isExpanded;
-  Item(
-      {required this.headerText,
-      required this.expandedText,
-      this.isExpanded = false});
-}
-
-List<Item> generateItemsList(int size) {
-  return List.generate(
-      size,
-      (int index) => Item(
-          headerText: '$index',
-          expandedText: 'Item $index',
-          isExpanded: false));
 }
 
 class DetalleAsesino extends StatelessWidget {
@@ -361,7 +343,10 @@ class DetalleAsesino extends StatelessWidget {
         Contratoss.generarContratos(asesinoSeleccionado, asesinos);
 
     return Scaffold(
-        appBar: AppBar(title: Text('Contratos de $asesinoSeleccionado')),
+        backgroundColor: Colors.grey,
+        appBar: AppBar(
+            title: Text('Contratos de $asesinoSeleccionado'),
+            backgroundColor: const Color.fromARGB(255, 90, 83, 83)),
         body: ListView.builder(
           itemCount: listaContratos.length,
           itemBuilder: (context, index) {

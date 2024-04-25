@@ -35,50 +35,80 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Row(
-        children: [
-          Center(
-            child: DropdownButton<String>(
-              value: selectedIndex,
-              hint: const Text('Select a asesino'),
-              onChanged: (newValue) {
-                setState(() {
-                  selectedIndex = newValue;
-                });
-              },
-              items: [
-                DropdownMenuItem<String>(
-                    value: "The Shinobi", child: Text("The Shinobi")),
-                DropdownMenuItem<String>(value: "Chidi", child: Text("Chidi")),
-                DropdownMenuItem<String>(value: "Zero", child: Text("Zero")),
-                DropdownMenuItem<String>(
-                    value: "The Adjudicator", child: Text("The Adjudicator")),
-                DropdownMenuItem<String>(
-                    value: "The Harbinger", child: Text("The Harbinger")),
-                DropdownMenuItem<String>(
-                    value: "Killa Harkan", child: Text("Killa Harkan")),
-                DropdownMenuItem<String>(
-                    value: "Vincent Bisset de Gramont",
-                    child: Text("Vincent Bisset de Gramont")),
-                DropdownMenuItem<String>(value: "Caine", child: Text("Caine"))
-              ],
+      backgroundColor: Colors.black,
+      body: Padding(
+        padding: const EdgeInsets.only(top: 430),
+        child: Column(
+          children: [
+            Image(image: AssetImage('assets/images/barra.png')),
+            Center(
+              child: DropdownButton<String>(
+                focusColor: Colors.blue,
+                dropdownColor: Colors.grey,
+                iconEnabledColor: Colors.deepOrange,
+                iconDisabledColor: Colors.indigo,
+                value: selectedIndex,
+                hint: const Text(
+                  'Selecciona un Asesino',
+                  style: TextStyle(color: Colors.white),
+                ),
+                onChanged: (newValue) {
+                  setState(() {
+                    selectedIndex = newValue;
+                  });
+                },
+                items: [
+                  DropdownMenuItem<String>(
+                      value: "The Shinobi",
+                      child: Text("The Shinobi",
+                          style: TextStyle(color: Colors.white))),
+                  DropdownMenuItem<String>(
+                      value: "Chidi",
+                      child:
+                          Text("Chidi", style: TextStyle(color: Colors.white))),
+                  DropdownMenuItem<String>(
+                      value: "Zero",
+                      child:
+                          Text("Zero", style: TextStyle(color: Colors.white))),
+                  DropdownMenuItem<String>(
+                      value: "The Adjudicator",
+                      child: Text("The Adjudicator",
+                          style: TextStyle(color: Colors.white))),
+                  DropdownMenuItem<String>(
+                      value: "The Harbinger",
+                      child: Text("The Harbinger",
+                          style: TextStyle(color: Colors.white))),
+                  DropdownMenuItem<String>(
+                      value: "Killa Harkan",
+                      child: Text("Killa Harkan",
+                          style: TextStyle(color: Colors.white))),
+                  DropdownMenuItem<String>(
+                      value: "Vincent Bisset de Gramont",
+                      child: Text("Vincent Bisset de Gramont",
+                          style: TextStyle(color: Colors.white))),
+                  DropdownMenuItem<String>(
+                      value: "Caine",
+                      child:
+                          Text("Caine", style: TextStyle(color: Colors.white)))
+                ],
+              ),
             ),
-          ),
-          OutlinedButton(
-              onPressed: selectedIndex != null
-                  ? () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => AltaMesa(
-                            asesinoSeleccionado: selectedIndex!,
+            OutlinedButton(
+                onPressed: selectedIndex != null
+                    ? () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AltaMesa(
+                              asesinoSeleccionado: selectedIndex!,
+                            ),
                           ),
-                        ),
-                      );
-                    }
-                  : null,
-              child: Text('login'))
-        ],
+                        );
+                      }
+                    : null,
+                child: Text('login', style: TextStyle(color: Colors.white)))
+          ],
+        ),
       ),
     );
   }
