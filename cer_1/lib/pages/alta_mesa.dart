@@ -1,6 +1,7 @@
 import 'package:cer_1/login.dart';
 import 'package:cer_1/pages/contratos.dart';
 import 'package:cer_1/pages/perfil.dart';
+import 'package:cer_1/widgets/mi_drawer.dart';
 import 'package:cer_1/widgets/widget1.dart';
 import 'package:flutter/material.dart';
 
@@ -327,89 +328,26 @@ class _AltaMesaState extends State<AltaMesa> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Altamesa'),
-      ),
-      body: Column(
-        children: [
-          OutlinedButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: Text('salir'),
-          ),
-          Text(asesinos[_buscaAsesino(widget.asesinoSeleccionado)]['nombre']),
-          Text(asesinos[_buscaAsesino(widget.asesinoSeleccionado)]['edad']),
-          Image(
-              image: AssetImage(
-                  'assets/images/asesinos/${asesinos[_buscaAsesino(widget.asesinoSeleccionado)]['nombre']}.jpg'))
-        ],
-      ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
+        appBar: AppBar(
+          title: Text('Altamesa'),
+        ),
+        body: Column(
           children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text('Drawer Header'),
-            ),
-            ListTile(
-              title: const Text('Perfil'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => Perfil(
-                            asesinoSeleccionado:
-                                _buscaAsesino(widget.asesinoSeleccionado))));
-              },
-            ),
-            ListTile(
-              title: const Text('Home'),
-              onTap: () {
+            OutlinedButton(
+              onPressed: () {
                 Navigator.pop(context);
               },
+              child: Text('salir'),
             ),
-            ListTile(
-              title: const Text('Contratos'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => Contratos(
-                            asesinoSeleccionado: widget.asesinoSeleccionado)));
-              },
-            ),
-            ListTile(
-              title: const Text('Servicios'),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => AssasinCard(
-                              asesinoSeleccionado: widget.asesinoSeleccionado,
-                            )));
-              },
-            ),
-            ListTile(
-              title: const Text('Hoteles'),
-              onTap: () {
-                // Update the state of the app.
-                // ...
-              },
-            ),
-            ListTile(
-              title: const Text('Salir'),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.pop(context);
-              },
-            ),
+            Text(asesinos[_buscaAsesino(widget.asesinoSeleccionado)]['nombre']),
+            Text(asesinos[_buscaAsesino(widget.asesinoSeleccionado)]['edad']),
+            Image(
+                image: AssetImage(
+                    'assets/images/asesinos/${asesinos[_buscaAsesino(widget.asesinoSeleccionado)]['nombre']}.jpg'))
           ],
         ),
-      ),
-    );
+        drawer: MiDrawer(
+            asesinoSeleccionado: widget.asesinoSeleccionado,
+            asesinoIndex: _buscaAsesino(widget.asesinoSeleccionado)));
   }
 }

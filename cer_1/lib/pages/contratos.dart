@@ -1,3 +1,4 @@
+import 'package:cer_1/widgets/mi_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:cer_1/pages/cosas/locos.dart';
 
@@ -300,14 +301,6 @@ class Contratos extends StatefulWidget {
 }
 
 class _ContratosState extends State<Contratos> {
-/*   int _largoContrato(int select) {
-    switch (select) {
-      case 1:
-        return asesinos[1]['contratos'].length;
-    }
-  } */
-  final List<Item> _listaDeItems = generateItemsList(8);
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -339,6 +332,26 @@ List<Item> generateItemsList(int size) {
 class DetalleAsesino extends StatelessWidget {
   final String asesinoSeleccionado;
   final List<dynamic> asesinos;
+  int _asesinoBusca(String nombre) {
+    switch (nombre) {
+      case 'The Shinobi':
+        return 0;
+      case 'Chidi':
+        return 1;
+      case 'Zero':
+        return 2;
+      case 'The Adjudicator':
+        return 3;
+      case 'The Harbinger':
+        return 4;
+      case 'Killa Harkan':
+        return 5;
+      case 'Vincent Bisset de Gramont':
+        return 6;
+      default:
+        return 7;
+    }
+  }
 
   DetalleAsesino({required this.asesinoSeleccionado, required this.asesinos});
 
@@ -348,44 +361,15 @@ class DetalleAsesino extends StatelessWidget {
         Contratoss.generarContratos(asesinoSeleccionado, asesinos);
 
     return Scaffold(
-      appBar: AppBar(title: Text('Contratos de $asesinoSeleccionado')),
-      body: ListView.builder(
-        itemCount: listaContratos.length,
-        itemBuilder: (context, index) {
-          return listaContratos[index];
-        },
-      ),
-    );
+        appBar: AppBar(title: Text('Contratos de $asesinoSeleccionado')),
+        body: ListView.builder(
+          itemCount: listaContratos.length,
+          itemBuilder: (context, index) {
+            return listaContratos[index];
+          },
+        ),
+        drawer: MiDrawer(
+            asesinoSeleccionado: asesinoSeleccionado,
+            asesinoIndex: _asesinoBusca(asesinoSeleccionado)));
   }
 }
-
-/* 
-SingleChildScrollView(
-          child: ExpansionPanelList(
-            expansionCallback: (int index, bool isExpanded) {
-              setState(() {
-                for (int i = 0; i < _listaDeItems.length; i++) {
-                  if (i != index) {
-                    _listaDeItems[i].isExpanded = false;
-                  }
-                }
-                _listaDeItems[index].isExpanded =
-                    !(_listaDeItems[index].isExpanded);
-              });
-            },
-            children: _listaDeItems.map<ExpansionPanel>((Item item) {
-              return ExpansionPanel(
-                headerBuilder: (BuildContext context, bool isExpanded) {
-                  return ListTile(
-                    title: Text(item.headerText),
-                  );
-                },
-                body: ListTile(
-                  title: Text(item.headerText),
-                  subtitle: Text(item.expandedText),
-                ),
-                isExpanded: item.isExpanded,
-              );
-            }).toList(),
-        ));
-          ), */

@@ -1,3 +1,4 @@
+import 'package:cer_1/widgets/mi_drawer.dart';
 import 'package:cer_1/widgets/widget1.dart';
 import 'package:flutter/material.dart';
 
@@ -294,80 +295,50 @@ List<dynamic> asesinos = [
 class Perfil extends StatelessWidget {
   final int asesinoSeleccionado;
   const Perfil({super.key, required this.asesinoSeleccionado});
+  String _buscaAsessino(int asasin) {
+    switch (asasin) {
+      case 0:
+        return 'The Shinobi';
+      case 1:
+        return 'Chidi';
+      case 2:
+        return 'Zero';
+      case 3:
+        return 'The Adjudicator';
+      case 4:
+        return 'The Harbinger';
+      case 5:
+        return 'Killa Harkan';
+      case 6:
+        return 'Vincent Bisset de Gramont';
+      default:
+        return 'Caine';
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Perfil'),
-      ),
-      body: Column(
-        children: [
-          OutlinedButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: Text('salir'),
-          ),
-          Text(asesinos[asesinoSeleccionado]['nombre']),
-          Text(asesinos[asesinoSeleccionado]['edad']),
-          Image(
-              image: AssetImage(
-                  'assets/images/asesinos/${asesinos[asesinoSeleccionado]['nombre']}.jpg'))
-        ],
-      ),
-      drawer: Drawer(
-        child: ListView(
-          padding: EdgeInsets.zero,
+        appBar: AppBar(
+          title: Text('Perfil'),
+        ),
+        body: Column(
           children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text('Drawer Header'),
-            ),
-            ListTile(
-              title: const Text('Perfil'),
-              onTap: () {
-                // Update the state of the app.
-                // ...
-              },
-            ),
-            ListTile(
-              title: const Text('Home'),
-              onTap: () {
-                Navigator.pop(context);
+            OutlinedButton(
+              onPressed: () {
                 Navigator.pop(context);
               },
+              child: Text('salir'),
             ),
-            ListTile(
-              title: const Text('Contratos'),
-              onTap: () {
-                // Update the state of the app.
-                // ...
-              },
-            ),
-            ListTile(
-              title: const Text('Servicios'),
-              onTap: () {},
-            ),
-            ListTile(
-              title: const Text('Hoteles'),
-              onTap: () {
-                // Update the state of the app.
-                // ...
-              },
-            ),
-            ListTile(
-              title: const Text('Salir'),
-              onTap: () {
-                Navigator.pop(context);
-                Navigator.pop(context);
-              },
-            ),
+            Text(asesinos[asesinoSeleccionado]['nombre']),
+            Text(asesinos[asesinoSeleccionado]['edad']),
+            Image(
+                image: AssetImage(
+                    'assets/images/asesinos/${asesinos[asesinoSeleccionado]['nombre']}.jpg'))
           ],
         ),
-      ),
-    );
+        drawer: MiDrawer(
+            asesinoSeleccionado: _buscaAsessino(asesinoSeleccionado),
+            asesinoIndex: asesinoSeleccionado));
   }
 }

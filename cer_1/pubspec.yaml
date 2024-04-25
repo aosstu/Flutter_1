@@ -48,6 +48,7 @@ dev_dependencies:
   flutter_lints: ^2.0.0
   flutter_combo_box: ^0.0.2+5 
   expandable: ^5.0.1
+  carousel_slider: ^4.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -64,6 +65,8 @@ flutter:
   assets:
     - assets/images/asesinos/
     - assets/images/contratos/
+    - assets/images/servicios/
+    - assets/images/hoteles/
     
 
   # An image asset can refer to one or more resolution-specific "variants", see
