@@ -43,7 +43,7 @@ class Hoteles extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(width: 10), // Espacio entre los botones
+                SizedBox(width: 10),
                 Expanded(
                   child: ElevatedButton(
                     onPressed: () {
@@ -57,7 +57,7 @@ class Hoteles extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 10), // Espacio entre las filas de botones
+          SizedBox(height: 10),
           Expanded(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -72,7 +72,7 @@ class Hoteles extends StatelessWidget {
                         style: TextStyle(color: Colors.black)),
                   ),
                 ),
-                SizedBox(width: 10), // Espacio entre los botones
+                SizedBox(width: 10),
                 Expanded(
                   child: ElevatedButton(
                     onPressed: () {

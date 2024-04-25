@@ -49,7 +49,7 @@ class Servicios extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(width: 16), // Espacio entre los botones
+                SizedBox(width: 16),
                 Expanded(
                   child: ElevatedButton(
                     onPressed: () {
@@ -68,7 +68,7 @@ class Servicios extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 16), // Espacio entre las filas de botones
+          SizedBox(height: 16),
           Expanded(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -88,7 +88,7 @@ class Servicios extends StatelessWidget {
                         style: TextStyle(color: Colors.black)),
                   ),
                 ),
-                SizedBox(width: 16), // Espacio entre los botones
+                SizedBox(width: 16),
                 Expanded(
                   child: ElevatedButton(
                     onPressed: () {
@@ -107,7 +107,7 @@ class Servicios extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(height: 16), // Espacio entre las filas de botones
+          SizedBox(height: 16),
           Expanded(
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -127,7 +127,7 @@ class Servicios extends StatelessWidget {
                         style: TextStyle(color: Colors.black)),
                   ),
                 ),
-                SizedBox(width: 16), // Espacio entre los botones
+                SizedBox(width: 16),
                 Expanded(
                   child: ElevatedButton(
                     onPressed: () {

@@ -1,18 +1,5 @@
-import 'dart:convert';
-
 import 'package:cer_1/pages/alta_mesa.dart';
 import 'package:flutter/material.dart';
-
-List<String> cabros = [
-  "The Shinobi",
-  "Chidi",
-  "Zero",
-  "The Adjudicator",
-  "The Harbinger",
-  "Killa Harkan",
-  "Vincent Bisset de Gramont",
-  "Caine"
-];
 
 class Asesino {
   String texto;

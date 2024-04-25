@@ -1,8 +1,4 @@
-import 'package:cer_1/login.dart';
-import 'package:cer_1/pages/contratos.dart';
-import 'package:cer_1/pages/perfil.dart';
 import 'package:cer_1/widgets/mi_drawer.dart';
-import 'package:cer_1/widgets/widget1.dart';
 import 'package:flutter/material.dart';
 
 List<dynamic> asesinos = [

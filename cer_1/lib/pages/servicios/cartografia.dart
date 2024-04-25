@@ -19,28 +19,26 @@ class Cartografia extends StatelessWidget {
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.pop(context); // Regresar a la pantalla anterior
+            Navigator.pop(context);
           },
         ),
       ),
       body: Column(
         children: [
           Padding(
-            padding: EdgeInsets.all(
-                8.0), // Ajusta el valor del relleno según sea necesario
+            padding: EdgeInsets.all(8.0),
             child: SizedBox(
-              width: 600, // Ajusta el ancho deseado para la imagen
-              height: 500, // Ajusta el alto deseado para la imagen
+              width: 600,
+              height: 500,
               child: Center(
                 child: Image(
                   image: AssetImage('assets/images/servicios/carto.jpg'),
-                  fit: BoxFit
-                      .cover, // Opcional: ajusta el ajuste de la imagen según sea necesario
+                  fit: BoxFit.cover,
                 ),
               ),
             ),
           ),
-          SizedBox(height: 8), // Espacio entre la imagen y el pie de imagen
+          SizedBox(height: 8),
           Text('Simone Spinazze',
               style: TextStyle(
                   fontSize: 16,
@@ -53,18 +51,16 @@ class Cartografia extends StatelessWidget {
           ),
           CarouselSlider(
             options: CarouselOptions(
-              height: 200, // Altura del carrusel
-              aspectRatio: 16 / 9, // Relación de aspecto de las diapositivas
-              autoPlay: true, // Reproducción automática
-              enlargeCenterPage: true, // Enfatiza la página central
-              enlargeStrategy: CenterPageEnlargeStrategy
-                  .scale, // Estrategia de agrandamiento
+              height: 200,
+              aspectRatio: 16 / 9,
+              autoPlay: true,
+              enlargeCenterPage: true,
+              enlargeStrategy: CenterPageEnlargeStrategy.scale,
             ),
             items: [
               AssetImage('assets/images/servicios/carto 1.jpg'),
               AssetImage('assets/images/servicios/carto 2.jpg'),
               AssetImage('assets/images/servicios/carto 3.jpg'),
-              // Agrega más imágenes según sea neceario
             ].map((image) {
               return Builder(
                 builder: (BuildContext context) {

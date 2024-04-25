@@ -20,28 +20,26 @@ class Comida extends StatelessWidget {
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.pop(context); // Regresar a la pantalla anterior
+            Navigator.pop(context);
           },
         ),
       ),
       body: Column(
         children: [
           Padding(
-            padding: EdgeInsets.all(
-                6.0), // Ajusta el valor del relleno según sea necesario
+            padding: EdgeInsets.all(6.0),
             child: SizedBox(
-              width: 600, // Ajusta el ancho deseado para la imagen
-              height: 400, // Ajusta el alto deseado para la imagen
+              width: 600,
+              height: 400,
               child: Center(
                 child: Image(
                   image: AssetImage('assets/images/servicios/comida.jpg'),
-                  fit: BoxFit
-                      .cover, // Opcional: ajusta el ajuste de la imagen según sea necesario
+                  fit: BoxFit.cover,
                 ),
               ),
             ),
           ),
-          SizedBox(height: 8), // Espacio entre la imagen y el pie de imagen
+          SizedBox(height: 8),
           Text('Cocinero Personal',
               style: TextStyle(
                   fontSize: 16,
@@ -54,18 +52,16 @@ class Comida extends StatelessWidget {
           ),
           CarouselSlider(
             options: CarouselOptions(
-              height: 200, // Altura del carrusel
-              aspectRatio: 16 / 9, // Relación de aspecto de las diapositivas
-              autoPlay: true, // Reproducción automática
-              enlargeCenterPage: true, // Enfatiza la página central
-              enlargeStrategy: CenterPageEnlargeStrategy
-                  .scale, // Estrategia de agrandamiento
+              height: 200,
+              aspectRatio: 16 / 9,
+              autoPlay: true,
+              enlargeCenterPage: true,
+              enlargeStrategy: CenterPageEnlargeStrategy.scale,
             ),
             items: [
               AssetImage('assets/images/servicios/comida 1.jpg'),
               AssetImage('assets/images/servicios/comida 2.jpg'),
               AssetImage('assets/images/servicios/comida 3.jpg'),
-              // Agrega más imágenes según sea necesario
             ].map((image) {
               return Builder(
                 builder: (BuildContext context) {

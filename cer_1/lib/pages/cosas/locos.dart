@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:cer_1/widgets/contratos_card.dart'; // Asegúrate de importar correctamente el archivo GameCard.dart
+import 'package:cer_1/widgets/contratos_card.dart';
 
 class Contratoss {
   static List<Widget> generarContratos(
